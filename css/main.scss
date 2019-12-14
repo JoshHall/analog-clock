@@ -1,0 +1,124 @@
+$break-small: 320px;
+$break-large: 1200px;
+
+* {
+  margin: 0%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #69a4ff;
+
+  .clock::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #848484;
+    border: 2px solid #fff;
+    z-index: 1000;
+    border-radius: 50%;
+  }
+
+  .clock {
+    width: 60vh;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff url(../images/clock.png);
+    background-size: cover;
+    border-radius: 50%;
+    border: 20px solid #fff;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1),
+      0 20px 20px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(255, 255, 255, 1);
+
+    .hour,
+    .min,
+    .sec,
+    .day {
+      position: absolute;
+    }
+    .day {
+      width: 14vh;
+      height: 5vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 40%;
+      left: 50%;
+      z-index: 1001;
+      background: rgba(62, 219, 219, 0.2);
+      border: 1px solid rgba(62, 219, 219, 0.7);
+      box-shadow: inset 0 0 20px rgba (62, 219, 219, 0.7);
+      //   font-size: 1em;
+      @media screen and (max-width: $break-small) {
+        .dy {
+          font-size: 0.5em;
+          //   background: rgba(62, 219, 219, 0.2);
+        }
+      }
+      @media screen and (min-width: $break-large) {
+        .dy {
+          font-size: 1.6rem;
+          //   background: rgba(62, 219, 219, 0.2);
+        }
+      }
+    }
+    .hour,
+    .hr {
+      width: 30vh;
+      height: 30vh;
+    }
+    .min,
+    .mn {
+      width: 31vh;
+      height: 37vh;
+    }
+    .sec,
+    .sc {
+      width: 33vh;
+      height: 40vh;
+    }
+    .hr,
+    .mn,
+    .sc {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .hr::before {
+      content: "";
+      position: absolute;
+      width: 1vh;
+      height: 13.5vh;
+      background: #848484;
+      z-index: 1002;
+      border-radius: 6px 6px 0 0;
+    }
+    .mn::before {
+      content: "";
+      position: absolute;
+      width: 0.5vh;
+      height: 17vh;
+      background: #aaa3a3;
+      z-index: 1003;
+      border-radius: 6px 6px 0 0;
+    }
+    .sc::before {
+      content: "";
+      position: absolute;
+      width: 0.25vh;
+      height: 25vh;
+      background: #ff6767;
+      z-index: 1004;
+      border-radius: 6px 6px 0 0;
+    }
+  }
+}
